@@ -1,0 +1,311 @@
+﻿{
+  "foodItems": [
+    {
+      "name": "pancakes",
+      "names": [ "pancakes", "pancake" ],
+      "emoji": "🥞",
+      "isPlural": true,
+      "messages": []
+    },
+    {
+      "name": "burgers",
+      "names": [
+        "burger",
+        "burgers",
+        "hamburger",
+        "hamburgers",
+        "cheeseburger",
+        "cheeseburgers",
+        "borg",
+        "borgor",
+        "borger",
+        "bacon cheeseburger",
+        "double bacon cheeseburger"
+      ],
+      "emoji": "🍔",
+      "isPlural": true,
+      "messages": []
+    },
+    {
+      "name": "bacon",
+      "names": [ "bacon" ],
+      "emoji": "🥓",
+      "isPlural": false,
+      "messages": []
+    },
+    {
+      "name": "cake",
+      "names": [ "cake" ],
+      "emoji": "🍰",
+      "isPlural": false,
+      "messages": []
+    },
+    {
+      "name": "chicken",
+      "names": [ "chicken" ],
+      "emoji": "🍗",
+      "isPlural": false,
+      "messages": []
+    },
+    {
+      "name": "doughnuts",
+      "names": [ "donuts", "donut", "doughnut", "doughnuts" ],
+      "emoji": "🍩",
+      "isPlural": true,
+      "messages": []
+    },
+    {
+      "name": "eggs",
+      "names": [ "eggs", "egg" ],
+      "emoji": "🍳",
+      "isPlural": true,
+      "messages": []
+    },
+    {
+      "name": "pizza",
+      "names": [ "pizza" ],
+      "emoji": "🍕",
+      "isPlural": false,
+      "messages": []
+    },
+    {
+      "name": "poutine",
+      "names": [ "poutine" ],
+      "emoji": "🍟",
+      "isPlural": false,
+      "messages": []
+    },
+    {
+      "name": "ramen",
+      "names": [ "ramen" ],
+      "emoji": "🍜",
+      "isPlural": false,
+      "messages": []
+    },
+    {
+      "name": "rice",
+      "names": [ "rice" ],
+      "emoji": "🍚",
+      "isPlural": false,
+      "messages": []
+    },
+    {
+      "name": "shrimp",
+      "names": [ "shrimp" ],
+      "emoji": "🍤",
+      "isPlural": true,
+      "messages": []
+    },
+    {
+      "name": "spaghetti",
+      "names": [ "spaghetti", "spaghet", "pasta" ],
+      "emoji": "🍝",
+      "isPlural": false,
+      "messages": []
+    },
+    {
+      "name": "steak",
+      "names": [ "steak" ],
+      "emoji": "🥩",
+      "isPlural": false,
+      "messages": []
+    },
+    {
+      "name": "waffles",
+      "names": [ "waffles", "waffle" ],
+      "emoji": "🧇",
+      "isPlural": true,
+      "messages": []
+    },
+    {
+      "name": "bento",
+      "names": [ "bento" ],
+      "emoji": "🍱",
+      "isPlural": false,
+      "messages": []
+    },
+    {
+      "name": "burrito",
+      "names": [ "burrito" ],
+      "emoji": "🌯",
+      "isPlural": false,
+      "messages": []
+    },
+    {
+      "name": "fries",
+      "names": [ "fries", "french fries" ],
+      "emoji": "🍟",
+      "isPlural": true,
+      "messages": [ "Don't spill them!" ]
+    },
+    {
+      "name": "sandwiches",
+      "names": [ "sandwich", "sandwiches" ],
+      "emoji": "🥪",
+      "isPlural": true,
+      "messages": []
+    },
+    {
+      "name": "sushi",
+      "names": [ "sushi" ],
+      "emoji": "🍣",
+      "isPlural": false,
+      "messages": []
+    },
+    {
+      "name": "tacos",
+      "names": [ "taco", "tacos" ],
+      "emoji": "🌮",
+      "isPlural": true,
+      "messages": []
+    },
+    {
+      "name": "falafel",
+      "names": [ "falafel" ],
+      "emoji": "🧆",
+      "isPlural": false,
+      "messages": []
+    },
+    {
+      "name": "hot dogs",
+      "names": [ "hot dogs", "hot dog", "hotdog", "hotdogs" ],
+      "emoji": "🌭",
+      "isPlural": true,
+      "messages": []
+    },
+    {
+      "name": "dumplings",
+      "names": [ "dumplings" ],
+      "emoji": "🥟",
+      "isPlural": true,
+      "messages": []
+    },
+    {
+      "name": "popcorn",
+      "names": [ "popcorn" ],
+      "emoji": "🍿",
+      "isPlural": false,
+      "messages": []
+    },
+    {
+      "name": "pie",
+      "names": [
+        "pie",
+        "apple pie",
+        "pumpkin pie",
+        "cherry pie",
+        "pecan pie",
+        "rhubarb pie",
+        "key lime pie"
+      ],
+      "emoji": "🥧",
+      "isPlural": false,
+      "messages": []
+    },
+    {
+      "name": "soup",
+      "names": [ "soup" ],
+      "emoji": "🍲",
+      "isPlural": false,
+      "messages": []
+    },
+    {
+      "name": "cookies",
+      "names": [ "cookies", "cookie" ],
+      "emoji": "🍪",
+      "isPlural": true,
+      "messages": []
+    },
+    {
+      "name": "bread",
+      "names": [ "bread", "toast" ],
+      "emoji": "🍞",
+      "isPlural": false,
+      "messages": []
+    },
+    {
+      "name": "baguettes",
+      "names": [ "baguettes", "baguette" ],
+      "emoji": "🥖",
+      "isPlural": true,
+      "messages": []
+    },
+    {
+      "name": "bagels",
+      "names": [ "bagel", "bagels" ],
+      "emoji": "🥯",
+      "isPlural": true,
+      "messages": []
+    },
+    {
+      "name": "cereal",
+      "names": [ "cereal" ],
+      "emoji": "🥣",
+      "isPlural": false,
+      "messages": []
+    },
+    {
+      "name": "chocolate",
+      "names": [ "chocolate" ],
+      "emoji": "🍫",
+      "isPlural": false,
+      "messages": []
+    },
+    {
+      "name": "coffee",
+      "names": [ "coffee" ],
+      "emoji": "☕",
+      "isPlural": false,
+      "messages": []
+    },
+    {
+      "name": "tea",
+      "names": [ "tea", "green tea" ],
+      "emoji": "🍵",
+      "isPlural": false,
+      "messages": []
+    },
+    {
+      "name": "bubble tea",
+      "names": [ "bubble tea", "boba tea", "boba" ],
+      "emoji": ":bubble_tea:",
+      "isPlural": false,
+      "messages": []
+    },
+    {
+      "name": "tamales",
+      "names": [ "tamale", "tamales" ],
+      "emoji": "🫔",
+      "isPlural": true,
+      "messages": []
+    },
+    {
+      "name": "oysters",
+      "names": [ "oyster", "oysters" ],
+      "emoji": "🦪",
+      "isPlural": true,
+      "messages": []
+    },
+    {
+      "name": "cupcakes",
+      "names": [ "cupcake", "cupcakes" ],
+      "emoji": "🧁",
+      "isPlural": true,
+      "messages": []
+    },
+    {
+      "name": "ice cream",
+      "names": [ "ice cream", "icecream" ],
+      "emoji": "🍦",
+      "isPlural": false,
+      "messages": []
+    },
+    {
+      "name": "butter",
+      "names": [ "butter" ],
+      "emoji": "🧈",
+      "isPlural": false,
+      "messages": []
+    }
+  ]
+}
