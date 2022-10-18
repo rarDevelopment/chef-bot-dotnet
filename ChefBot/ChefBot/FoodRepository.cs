@@ -12,7 +12,8 @@ namespace ChefBot
 
         public FoodItem[]? GetAllFood()
         {
-            using StreamReader r = new StreamReader("./food.json");
+            string filePath = Path.GetFullPath("food.json");
+            using StreamReader r = new StreamReader(filePath);
             string json = r.ReadToEnd();
             var food = JsonSerializer.Deserialize<FoodData>(json, new JsonSerializerOptions
             {
