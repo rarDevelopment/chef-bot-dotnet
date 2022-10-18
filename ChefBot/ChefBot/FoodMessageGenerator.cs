@@ -41,7 +41,7 @@ namespace ChefBot
             return foodMessage;
         }
 
-        private string FormatTitleCase(string text)
+        public string FormatTitleCase(string text)
         {
             var regex = new Regex("^M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$");
             var splitFormatted = text
@@ -78,5 +78,6 @@ namespace ChefBot
     public interface IFoodMessageGenerator
     {
         string Generate(string food, ulong userId, string emoji, bool isPlural);
+        string FormatTitleCase(string text);
     }
 }

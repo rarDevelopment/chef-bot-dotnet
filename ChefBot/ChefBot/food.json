@@ -306,6 +306,13 @@
       "emoji": "🧈",
       "isPlural": false,
       "messages": []
+    },
+    {
+      "name": "salad",
+      "names": [ "salad", "salads", "greek salad", "caesar salad", "garden salad" ],
+      "emoji": "🥗",
+      "isPlural": false,
+      "messages": []
     }
   ]
 }

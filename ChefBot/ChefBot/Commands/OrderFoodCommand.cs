@@ -1,18 +1,18 @@
 ﻿using ChefBot.Models;
 
 namespace ChefBot.Commands;
-public class MakeFoodCommand : InteractionModuleBase<SocketInteractionContext>
+public class OrderFoodCommand : InteractionModuleBase<SocketInteractionContext>
 {
     private readonly IFoodRepository _foodRepository;
     private readonly IFoodMessageGenerator _foodMessageGenerator;
 
-    public MakeFoodCommand(IFoodRepository foodRepository, IFoodMessageGenerator foodMessageGenerator)
+    public OrderFoodCommand(IFoodRepository foodRepository, IFoodMessageGenerator foodMessageGenerator)
     {
         _foodRepository = foodRepository;
         _foodMessageGenerator = foodMessageGenerator;
     }
 
-    [SlashCommand("make", "Enables or disables the game news announcements for this channel.")]
+    [SlashCommand("order", "Order food or a drink.")]
     public async Task MakeFood(
         [Summary("food_or_drink", "The food you'd like to have")] string foodOrDrink,
         [Summary("user_to_treat", "Specify a user here if you'd like Chef Bot to make food for them instead of yourself")] SocketUser? userToTreat = null
