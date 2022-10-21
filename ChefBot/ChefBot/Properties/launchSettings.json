@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "ChefBot": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}
