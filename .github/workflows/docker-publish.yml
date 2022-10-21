@@ -70,5 +70,5 @@ jobs:
           envs: ${{ env.CURRENT_ID }}
           script: |
             cd /root/custom_dockerfiles/infrastructure
-            echo "${{secrets.GITHUB_TOKEN}}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+            echo "${{secrets.PUBLISH_TOKEN}}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
             docker pull "${{ env.CURRENT_ID }}:latest" && docker-compose up -d
