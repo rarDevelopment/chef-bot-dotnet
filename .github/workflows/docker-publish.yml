@@ -73,6 +73,6 @@ jobs:
           KEY: ${{ secrets.DOCKERDEPLOY_PK }}
           envs: ${{ env.CURRENT_ID }}
           script: |
-            cd /root/custom_dockerfiles/infrastructure
+            cd /root/dockerbots/chef-bot
             echo "${{secrets.PUBLISH_TOKEN}}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
             docker pull "${{ env.CURRENT_ID }}:latest" && docker-compose up -d
