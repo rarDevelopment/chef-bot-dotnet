@@ -17,7 +17,7 @@ var builder = new HostBuilder();
 
 var f = builder.ConfigureAppConfiguration(options
     => options.AddJsonFile("appsettings.json")
-        .AddUserSecrets(Assembly.GetEntryAssembly(), false)
+        .AddUserSecrets(Assembly.GetEntryAssembly(), true)
         .AddEnvironmentVariables());
 
 var loggerConfig = new LoggerConfiguration()
@@ -37,6 +37,15 @@ builder.ConfigureServices((host, services) =>
             LogGatewayIntentWarnings = false
         }));
 
+    var isDevelopment = host.HostingEnvironment.IsDevelopment();
+    var discordSettings = new DiscordSettings
+    {
+        BotToken = isDevelopment
+            ? host.Configuration["Discord:BotToken"]
+            : Environment.GetEnvironmentVariable("BOT_TOKEN")
+    };
+
+    services.AddSingleton(discordSettings);
     services.AddScoped<IDiscordFormatter, DiscordFormatter>();
     services.AddScoped<IFoodRepository, FoodRepository>();
     services.AddScoped<IFoodMessageGenerator, FoodMessageGenerator>();

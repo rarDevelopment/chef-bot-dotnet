@@ -6,17 +6,18 @@ namespace ChefBot
     {
         private readonly DiscordSocketClient _client;
         private readonly InteractionService _interactions;
-        private readonly IConfiguration _config;
         private readonly ILogger _logger;
         private readonly InteractionHandler _interactionHandler;
+        private readonly DiscordSettings _discordSettings;
 
-        public DiscordBot(DiscordSocketClient client, InteractionService interactions, IConfiguration config, ILogger<DiscordBot> logger, InteractionHandler interactionHandler)
+        public DiscordBot(DiscordSocketClient client, InteractionService interactions, ILogger<DiscordBot> logger,
+            InteractionHandler interactionHandler, DiscordSettings discordSettings)
         {
             _client = client;
             _interactions = interactions;
-            _config = config;
             _logger = logger;
             _interactionHandler = interactionHandler;
+            _discordSettings = discordSettings;
         }
 
         public async Task StartAsync(CancellationToken cancellationToken)
@@ -28,7 +29,7 @@ namespace ChefBot
 
             await _interactionHandler.InitializeAsync();
 
-            await _client.LoginAsync(TokenType.Bot, _config["Secrets:Discord"]);
+            await _client.LoginAsync(TokenType.Bot, _discordSettings.BotToken);
 
             await _client.StartAsync();
         }
