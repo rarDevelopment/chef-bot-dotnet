@@ -42,17 +42,13 @@ builder.ConfigureServices((host, services) =>
             LogGatewayIntentWarnings = false
         }));
 
-    host.HostingEnvironment.EnvironmentName = Environments.Development;
-    var isDevelopment = host.HostingEnvironment.IsDevelopment();
-
     var discordSettings = new DiscordSettings
     {
-        BotToken = isDevelopment
-            ? host.Configuration["Discord:BotToken"]
-            : Environment.GetEnvironmentVariable("BOT_TOKEN")
+        BotToken = host.Configuration["Discord:BotToken"]
     };
 
     Console.WriteLine($"BotToken: '{discordSettings.BotToken}'");
+    Console.WriteLine($"IsDevelopment: '{host.HostingEnvironment.IsDevelopment()}'");
 
     services.AddSingleton(discordSettings);
     services.AddScoped<IDiscordFormatter, DiscordFormatter>();
