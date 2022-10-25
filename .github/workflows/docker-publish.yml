@@ -72,8 +72,8 @@ jobs:
           script: |
             cd /root/dockerbots/chef-bot
             echo "${{secrets.PUBLISH_TOKEN}}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
-            docker stop $(docker ps -q -f "name=chef-bot")
-            docker container rm -f chef-bot || echo "No container to stop"
+            docker stop $(docker ps -q -f "name=chef-bot") || echo "No container to stop"
+            docker container rm -f chef-bot || echo "No container to rm"
             docker pull "${{ env.CURRENT_ID }}:latest"
             docker run -d --name=chef-bot --env Discord__BotToken=${{ secrets.BOT_TOKEN }} --restart=unless-stopped ${{ env.CURRENT_ID }}:latest
             exit
