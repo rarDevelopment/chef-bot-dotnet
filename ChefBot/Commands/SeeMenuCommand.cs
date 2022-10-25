@@ -23,7 +23,10 @@ public class SeeMenuCommand : InteractionModuleBase<SocketInteractionContext>
         }
         var sortedFoodStrings = allFood.OrderBy(f => f.Name).Select(f => $"{_foodMessageGenerator.FormatTitleCase(f.Name)} {f.Emoji}");
         var dailySpecial = GetDailySpecial(allFood);
-        await RespondAsync($"Today we're serving:\n{string.Join("\n", sortedFoodStrings)}\n\nOur daily special: {_foodMessageGenerator.FormatTitleCase(dailySpecial.Name)} {dailySpecial.Emoji}");
+        var menuItemsDisplay = string.Join("\n", sortedFoodStrings);
+        var formattedDailySpecial = _foodMessageGenerator.FormatTitleCase(dailySpecial.Name);
+        await RespondAsync($"Today we're serving:\n{menuItemsDisplay}\n\nOur daily special: {formattedDailySpecial} {dailySpecial.Emoji}",
+            ephemeral: true);
     }
 
     private FoodItem GetDailySpecial(FoodItem[] allFood)

@@ -71,4 +71,4 @@ jobs:
           script: |
             cd /root/dockerbots/chef-bot
             echo "${{secrets.PUBLISH_TOKEN}}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
-            docker pull "${{ env.CURRENT_ID }}:latest" && docker-compose up -d
+            docker pull "${{ env.CURRENT_ID }}:latest" && docker stop $(docker ps -q -f "name=chef-bot") && docker run $(docker ps -q -f "name=chef-bot") --env BOT_TOKEN=${{ secrets.BOT_TOKEN }} --restart=unless-stopped

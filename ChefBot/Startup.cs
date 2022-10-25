@@ -12,13 +12,18 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Serilog;
 
-
 var builder = new HostBuilder();
 
-var f = builder.ConfigureAppConfiguration(options
+builder
+    .ConfigureAppConfiguration(options
     => options.AddJsonFile("appsettings.json")
         .AddUserSecrets(Assembly.GetEntryAssembly(), true)
-        .AddEnvironmentVariables());
+        .AddEnvironmentVariables())
+    .ConfigureHostConfiguration(configHost =>
+    {
+        configHost.AddEnvironmentVariables(prefix: "DOTNET_");
+    });
+
 
 var loggerConfig = new LoggerConfiguration()
     .WriteTo.Console()
@@ -37,7 +42,9 @@ builder.ConfigureServices((host, services) =>
             LogGatewayIntentWarnings = false
         }));
 
+    host.HostingEnvironment.EnvironmentName = Environments.Development;
     var isDevelopment = host.HostingEnvironment.IsDevelopment();
+
     var discordSettings = new DiscordSettings
     {
         BotToken = isDevelopment
@@ -51,9 +58,7 @@ builder.ConfigureServices((host, services) =>
     services.AddScoped<IFoodMessageGenerator, FoodMessageGenerator>();
 
     services.AddSingleton(x => new InteractionService(x.GetRequiredService<DiscordSocketClient>()));
-
     services.AddSingleton<InteractionHandler>();
-
     services.AddHostedService<DiscordBot>();
 });
 
