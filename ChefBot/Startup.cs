@@ -52,6 +52,8 @@ builder.ConfigureServices((host, services) =>
             : Environment.GetEnvironmentVariable("BOT_TOKEN")
     };
 
+    Console.WriteLine($"BotToken: '{discordSettings.BotToken}'");
+
     services.AddSingleton(discordSettings);
     services.AddScoped<IDiscordFormatter, DiscordFormatter>();
     services.AddScoped<IFoodRepository, FoodRepository>();
