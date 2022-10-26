@@ -7,7 +7,7 @@ on:
     tags:
       - v*
 env:
-  IMAGE_NAME: chef-bot
+  IMAGE_NAME: chefbot
   REGISTRY: ghcr.io
   DOCKERDEPLOY_HOST_USER: ${{secrets.DOCKERDEPLOY_HOST_USER }}
 jobs:
@@ -41,7 +41,7 @@ jobs:
           echo -n "${{secrets.DOCKERDEPLOY_HOST_USER }}" | wc -c
       - 
         name: Build Bot
-        run: docker build -t chefbot .
+        run: docker build -t ${{ env.IMAGE_NAME }} .
       - 
         name: Echoing the publishing Variables
         run: |
@@ -51,11 +51,11 @@ jobs:
         name: Log into registry
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
       - 
-        name: Push chefbot image
+        name: Push ${{ env.IMAGE_NAME }} image
         run: |
           CURRENT_ID=ghcr.io/$IMAGE_ID
-          docker tag chefbot $CURRENT_ID:$VERSION
-          docker tag chefbot $CURRENT_ID:latest
+          docker tag ${{ env.IMAGE_NAME }} $CURRENT_ID:$VERSION
+          docker tag ${{ env.IMAGE_NAME }} $CURRENT_ID:latest
 
           docker push $CURRENT_ID:$VERSION
           docker push $CURRENT_ID:latest
@@ -70,10 +70,10 @@ jobs:
           envs: ${{ env.CURRENT_ID }}
           script_stop: true
           script: |
-            cd /root/dockerbots/chef-bot
+            cd /root/dockerbots/${{ env.IMAGE_NAME }}
             echo "${{secrets.PUBLISH_TOKEN}}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
-            docker stop $(docker ps -q -f "name=chef-bot") || echo "No container to stop"
-            docker container rm -f chef-bot || echo "No container to rm"
+            docker stop $(docker ps -q -f "name=${{ env.IMAGE_NAME }}") || echo "No container to stop"
+            docker container rm -f ${{ env.IMAGE_NAME }} || echo "No container to rm"
             docker pull "${{ env.CURRENT_ID }}:latest"
-            docker run -d --name=chef-bot --env Discord__BotToken=${{ secrets.BOT_TOKEN }} --restart=unless-stopped ${{ env.CURRENT_ID }}:latest
+            docker run -d --name=${{ env.IMAGE_NAME }} --env Discord__BotToken=${{ secrets.BOT_TOKEN }} --restart=unless-stopped ${{ env.CURRENT_ID }}:latest
             exit
