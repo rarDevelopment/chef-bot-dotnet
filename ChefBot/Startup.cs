@@ -47,9 +47,6 @@ builder.ConfigureServices((host, services) =>
         BotToken = host.Configuration["Discord:BotToken"]
     };
 
-    Console.WriteLine($"BotToken: '{discordSettings.BotToken}'");
-    Console.WriteLine($"IsDevelopment: '{host.HostingEnvironment.IsDevelopment()}'");
-
     services.AddSingleton(discordSettings);
     services.AddScoped<IDiscordFormatter, DiscordFormatter>();
     services.AddScoped<IFoodRepository, FoodRepository>();

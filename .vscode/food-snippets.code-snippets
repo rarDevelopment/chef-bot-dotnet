@@ -1,0 +1,19 @@
+{
+    "food item": {
+        "scope": "json",
+        "prefix": "fi",
+        "body": [
+            "\"${1:FOOD}\": {",
+            "\t\"name\": \"${2:DISPLAYNAME}\",",
+            "\t\"names\": [",
+            "\t\t\"${3:NAME}\"",
+            "\t],",
+            "\t\"emoji\": \"${4:EMOJI}\",",
+            "\t\"isPlural\": ${5:PLURAL},",
+            "\t\"messages\": [",
+            "\t\t\"${6:MESSAGE}\"",
+            "\t]",
+            "},"
+        ]
+    }
+}
