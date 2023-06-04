@@ -47,7 +47,13 @@ builder.ConfigureServices((host, services) =>
         BotToken = host.Configuration["Discord:BotToken"]
     };
 
+    var versionSettings = new VersionSettings
+    {
+        VersionNumber = host.Configuration["Version:VersionNumber"]
+    };
+
     services.AddSingleton(discordSettings);
+    services.AddSingleton(versionSettings);
     services.AddScoped<IDiscordFormatter, DiscordFormatter>();
     services.AddScoped<IFoodRepository, FoodRepository>();
     services.AddScoped<IFoodMessageGenerator, FoodMessageGenerator>();

@@ -12,7 +12,7 @@ public class SeeMenuCommand : InteractionModuleBase<SocketInteractionContext>
         _foodMessageGenerator = foodMessageGenerator;
     }
 
-    [SlashCommand("menu", "Show the available food options from Chef Bot.")]
+    [SlashCommand("menu", "Show the available food options from ChefBot.")]
     public async Task SeeMenu()
     {
         var allFood = _foodRepository.GetAllFood();

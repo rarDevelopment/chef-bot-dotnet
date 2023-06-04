@@ -313,6 +313,27 @@
       "emoji": "🥗",
       "isPlural": false,
       "messages": []
+    },
+    {
+      "name": "wine",
+      "names": [
+        "cabernet",
+        "pinot",
+        "pinot noir",
+        "pinot grigio",
+        "chardonnay",
+        "merlot"
+      ],
+      "emoji": "🍷",
+      "isPlural": false
+    },
+    {
+      "name": "beer",
+      "names": [
+        "NAME"
+      ],
+      "emoji": "🍷",
+      "isPlural": false
     }
   ]
 }
