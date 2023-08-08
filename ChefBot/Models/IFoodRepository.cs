@@ -1,8 +1,7 @@
-﻿namespace ChefBot.Models
+﻿namespace ChefBot.Models;
+
+public interface IFoodRepository
 {
-    public interface IFoodRepository
-    {
-        FoodItem? GetFoodByName(string name);
-        FoodItem[]? GetAllFood();
-    }
+    FoodItem? GetFoodByName(string name);
+    FoodItem[]? GetAllFood();
 }
