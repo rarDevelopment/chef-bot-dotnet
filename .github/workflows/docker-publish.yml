@@ -2,8 +2,8 @@ name: Docker
 
 on:
   push:
-    tags:
-      - '*'
+    branches:
+      - main
 env:
   IMAGE_NAME: chefbot
   REGISTRY: ghcr.io
